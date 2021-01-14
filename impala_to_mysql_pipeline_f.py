@@ -11,19 +11,13 @@ import datetime
 # from datetime import datetime
 import pymysql as psl
 
-# mysql_host = 'rm-bp1c38b48277r5yl0.mysql.rds.aliyuncs.com'
-# mysql_datebase = 'australia_data_analysis'
-# mysql_user = 'australia_data_analysis'
-# mysql_password = 'UEG3ahVxp0q&S5iK'
-# mysql_port = 3306
-
 # print(datetime.datetime.now(tz=None))
 filtimestamp = str(datetime.datetime.now(tz=None)).replace(" ", "_").replace(".","_").replace("-","_").replace(":","_")
 filename = "rolling_forcast"+"_"+filtimestamp
 print(filename)
 
 impyla_host = 'XXXX.XXX.XXX'
-impyla_port = 99999S
+impyla_port = 99999
 impyla_user = 'XXXXX'
 impala_password = 'XXXXXX'
 
@@ -58,7 +52,7 @@ def get_impyla(querry):
 if __name__ == "__main__":
 
     querry_impyla = '''
-    select * from access_aus_bi.access_aus_bi_finance_rolling_forecast_i_dd_f where dt = '2020-10-01' limit 100;
+    select * from ****** where dt = '2020-10-01' limit 100;
     '''
     impala_df = get_impyla(querry_impyla)
 
